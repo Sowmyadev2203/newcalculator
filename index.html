@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            height: 40px;
+            width: 61px;
+            border-radius: 10px;
+            
+        }
+       
+        #div1{
+            width: 320px;
+            padding: 30px;
+            border-radius: 30px;
+             background-color: black;    
+        }
+        #div2{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-rows: auto auto auto auto;
+            row-gap: 10px;
+           
+        }
+        input{
+            /* background-color: red; */
+        }
+        #btn:hover{
+              background-color: rgb(0, 157, 255);
+        }
+        #btn1{
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+    <input id="ip" style="height: 50px;width: 288px; border-radius: 10px;">
+    <div id="div2"><br>
+    <button onclick="ac()"  id="ac" style="background-color:rgb(223, 17, 86);">AC</button>
+    <button onclick="back('X')" id="btn1">X</button>
+    <button onclick="addValue('%')" id="btn1">%</button>
+    <button onclick="addValue('/')" id="btn1">/</button><br>
+    <button onclick="addValue('7')" id="btn">7</button>
+    <button onclick="addValue('8')" id="btn">8</button>
+    <button onclick="addValue('9')" id="btn">9</button>
+    <button onclick="addValue('*')" id="btn1">x</button><br>
+    <button onclick="addValue('4')" id="btn">4</button>
+    <button onclick="addValue('5')" id="btn">5</button>
+    <button onclick="addValue('6')" id="btn">6</button>
+    <button onclick="addValue('-')"  id="btn1">-</button><br>
+    <button onclick="addValue('1')" id="btn">1</button>
+    <button onclick="addValue('2')" id="btn">2</button>
+    <button onclick="addValue('3')" id="btn">3</button>
+    <button onclick="addValue('+')" id="btn1">+</button><br>
+    <button onclick="addValue('00')" id="btn">00</button>
+    <button onclick="addValue('0')" id="btn">0</button>
+    <button onclick="addValue('.')" id="btn">.</button>
+    <button onclick="result('=')" id="bt" style="background-color: rgb(223, 17, 86);">=</button>
+   
+
+    </div>
+</div>
+
+
+
+
+<script>
+    let diva= document.getElementById("div1");
+    diva.style.border="2px solid black"
+    
+    let inputt=document.getElementById("ip");
+    inputt.style.margin="10px"
+    let divb=document.getElementById("div2");
+    // divb.style.border="1px solid black";
+    
+    // divb.style.margin="12px 10px 10px 13px";
+    
+    function addValue(x){
+        inputt.value+=x;
+    };
+
+   function ac(){
+    inputt.value="";
+   }
+
+    function result(){
+
+        let cal=eval(inputt.value);
+        inputt.value=cal;
+        button.style.backgroundColor="red"
+    };
+
+    function back(){
+        inputt.value = inputt.value.slice(0,-1);
+    }
+
+    let button = document.getElementById("bt")
+    button.addEventListener("click",(e)=>{
+        this.style.backgroundColor="red";
+
+    })
+
+    
+    
+
+</script>
+</body>
+</html>
+
+
